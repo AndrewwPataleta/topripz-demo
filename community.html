@@ -24,10 +24,11 @@
     @media(max-width:900px){.cm-grid{grid-template-columns:repeat(2,1fr)}.cm-stats{grid-template-columns:repeat(2,1fr)}}
     .cm-card{margin:0;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .18s ease,border-color .18s ease}
     .cm-card:hover{transform:translateY(-4px);border-color:var(--accent)}
-    .cm-slab{position:relative;aspect-ratio:3/4;background:linear-gradient(150deg,hsl(var(--hue) 45% 18%),hsl(var(--hue) 55% 9%));display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
-    .cm-slab::before{content:"";position:absolute;inset:14px;border-radius:8px;border:1.5px solid hsl(var(--hue) 60% 55% / .55);box-shadow:0 0 0 6px #0000000d, inset 0 0 40px #00000055}
-    .cm-holo{position:absolute;inset:14px;border-radius:8px;background:linear-gradient(115deg,transparent 30%,hsl(var(--hue) 90% 70% / .18) 45%,#ffffff22 50%,transparent 62%);mix-blend-mode:screen}
-    .cm-grade{position:absolute;top:20px;left:20px;font-family:var(--font-display);font-weight:800;font-size:11px;letter-spacing:.05em;color:var(--on-accent);background:var(--accent);padding:4px 8px;border-radius:6px}
+    .cm-slab{position:relative;aspect-ratio:3/4;background:linear-gradient(150deg,#141519,#0a0a0c);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}
+    .cm-cardimg{position:absolute;inset:12px;width:calc(100% - 24px);height:calc(100% - 24px);object-fit:contain;border-radius:6px;z-index:0;filter:drop-shadow(0 6px 16px #000000aa)}
+    .cm-slab::before{content:"";position:absolute;inset:10px;border-radius:8px;border:1.5px solid #ffffff26;box-shadow:0 0 0 5px #0000000d, inset 0 0 32px #00000055;z-index:1;pointer-events:none}
+    .cm-holo{position:absolute;inset:10px;border-radius:8px;background:linear-gradient(115deg,transparent 32%,#ffffff14 46%,#ffffff2e 50%,transparent 60%);mix-blend-mode:screen;z-index:2;pointer-events:none}
+    .cm-grade{position:absolute;top:18px;left:18px;font-family:var(--font-display);font-weight:800;font-size:11px;letter-spacing:.05em;color:var(--on-accent);background:var(--accent);padding:4px 8px;border-radius:6px;z-index:3}
     .cm-meta{padding:14px 15px}
     .cm-cardname{font-weight:700;font-size:14px;margin-bottom:8px;color:var(--ink)}
     .cm-row{display:flex;justify-content:space-between;align-items:center}
@@ -74,83 +75,91 @@
         </div>
         <div class="cm-grid">
       <figure class="cm-card">
-        <div class="cm-slab" style="--hue:150">
+        <div class="cm-slab">
+          <img class="cm-cardimg" src="images/cards/0.jpg" alt="Black Lotus, Alpha in a TopRipz sleeve" loading="lazy"/>
           <div class="cm-holo"></div>
-          <span class="cm-grade">PSA 10</span>
+          <span class="cm-grade">PSA 9</span>
         </div>
         <figcaption class="cm-meta">
-          <div class="cm-cardname">Charizard 1999 Base</div>
-          <div class="cm-row"><span class="cm-user">@dyno.slabs</span><span class="cm-likes">&#9825; 342</span></div>
-        </figcaption>
-      </figure>
-      <figure class="cm-card">
-        <div class="cm-slab" style="--hue:28">
-          <div class="cm-holo"></div>
-          <span class="cm-grade">BGS 9.5</span>
-        </div>
-        <figcaption class="cm-meta">
-          <div class="cm-cardname">Jordan '86 Fleer RC</div>
-          <div class="cm-row"><span class="cm-user">@vintage_vince</span><span class="cm-likes">&#9825; 501</span></div>
-        </figcaption>
-      </figure>
-      <figure class="cm-card">
-        <div class="cm-slab" style="--hue:280">
-          <div class="cm-holo"></div>
-          <span class="cm-grade">raw</span>
-        </div>
-        <figcaption class="cm-meta">
-          <div class="cm-cardname">Pikachu Illustrator</div>
-          <div class="cm-row"><span class="cm-user">@holoheather</span><span class="cm-likes">&#9825; 289</span></div>
-        </figcaption>
-      </figure>
-      <figure class="cm-card">
-        <div class="cm-slab" style="--hue:200">
-          <div class="cm-holo"></div>
-          <span class="cm-grade">SGC 9</span>
-        </div>
-        <figcaption class="cm-meta">
-          <div class="cm-cardname">Mickey Mantle '52</div>
-          <div class="cm-row"><span class="cm-user">@ripcity_ray</span><span class="cm-likes">&#9825; 767</span></div>
-        </figcaption>
-      </figure>
-      <figure class="cm-card">
-        <div class="cm-slab" style="--hue:340">
-          <div class="cm-holo"></div>
-          <span class="cm-grade">CGC 9.8</span>
-        </div>
-        <figcaption class="cm-meta">
-          <div class="cm-cardname">Amazing Spider-Man #300</div>
-          <div class="cm-row"><span class="cm-user">@comiccrusader</span><span class="cm-likes">&#9825; 913</span></div>
-        </figcaption>
-      </figure>
-      <figure class="cm-card">
-        <div class="cm-slab" style="--hue:120">
-          <div class="cm-holo"></div>
-          <span class="cm-grade">PSA 10</span>
-        </div>
-        <figcaption class="cm-meta">
-          <div class="cm-cardname">Luka Doncic Prizm RC</div>
-          <div class="cm-row"><span class="cm-user">@gem_mint_gabe</span><span class="cm-likes">&#9825; 214</span></div>
-        </figcaption>
-      </figure>
-      <figure class="cm-card">
-        <div class="cm-slab" style="--hue:95">
-          <div class="cm-holo"></div>
-          <span class="cm-grade">TAG 10</span>
-        </div>
-        <figcaption class="cm-meta">
-          <div class="cm-cardname">Black Lotus Alpha</div>
+          <div class="cm-cardname">Black Lotus, Alpha</div>
           <div class="cm-row"><span class="cm-user">@sleeveitup</span><span class="cm-likes">&#9825; 1180</span></div>
         </figcaption>
       </figure>
       <figure class="cm-card">
-        <div class="cm-slab" style="--hue:190">
+        <div class="cm-slab">
+          <img class="cm-cardimg" src="images/cards/1.jpg" alt="Shivan Dragon, Alpha in a TopRipz sleeve" loading="lazy"/>
+          <div class="cm-holo"></div>
+          <span class="cm-grade">PSA 10</span>
+        </div>
+        <figcaption class="cm-meta">
+          <div class="cm-cardname">Shivan Dragon, Alpha</div>
+          <div class="cm-row"><span class="cm-user">@dyno.slabs</span><span class="cm-likes">&#9825; 913</span></div>
+        </figcaption>
+      </figure>
+      <figure class="cm-card">
+        <div class="cm-slab">
+          <img class="cm-cardimg" src="images/cards/2.jpg" alt="Ancestral Recall, Alpha in a TopRipz sleeve" loading="lazy"/>
+          <div class="cm-holo"></div>
+          <span class="cm-grade">BGS 9</span>
+        </div>
+        <figcaption class="cm-meta">
+          <div class="cm-cardname">Ancestral Recall, Alpha</div>
+          <div class="cm-row"><span class="cm-user">@vintage_vince</span><span class="cm-likes">&#9825; 767</span></div>
+        </figcaption>
+      </figure>
+      <figure class="cm-card">
+        <div class="cm-slab">
+          <img class="cm-cardimg" src="images/cards/3.jpg" alt="Serra Angel, Alpha in a TopRipz sleeve" loading="lazy"/>
           <div class="cm-holo"></div>
           <span class="cm-grade">raw</span>
         </div>
         <figcaption class="cm-meta">
-          <div class="cm-cardname">Blastoise Shadowless</div>
-          <div class="cm-row"><span class="cm-user">@cornerqueen</span><span class="cm-likes">&#9825; 176</span></div>
+          <div class="cm-cardname">Serra Angel, Alpha</div>
+          <div class="cm-row"><span class="cm-user">@holoheather</span><span class="cm-likes">&#9825; 421</span></div>
+        </figcaption>
+      </figure>
+      <figure class="cm-card">
+        <div class="cm-slab">
+          <img class="cm-cardimg" src="images/cards/4.jpg" alt="Time Walk, Alpha in a TopRipz sleeve" loading="lazy"/>
+          <div class="cm-holo"></div>
+          <span class="cm-grade">PSA 8</span>
+        </div>
+        <figcaption class="cm-meta">
+          <div class="cm-cardname">Time Walk, Alpha</div>
+          <div class="cm-row"><span class="cm-user">@ripcity_ray</span><span class="cm-likes">&#9825; 689</span></div>
+        </figcaption>
+      </figure>
+      <figure class="cm-card">
+        <div class="cm-slab">
+          <img class="cm-cardimg" src="images/cards/5.jpg" alt="Mox Sapphire, Alpha in a TopRipz sleeve" loading="lazy"/>
+          <div class="cm-holo"></div>
+          <span class="cm-grade">BGS 9.5</span>
+        </div>
+        <figcaption class="cm-meta">
+          <div class="cm-cardname">Mox Sapphire, Alpha</div>
+          <div class="cm-row"><span class="cm-user">@gem_mint_gabe</span><span class="cm-likes">&#9825; 512</span></div>
+        </figcaption>
+      </figure>
+      <figure class="cm-card">
+        <div class="cm-slab">
+          <img class="cm-cardimg" src="images/cards/6.jpg" alt="Timetwister, Alpha in a TopRipz sleeve" loading="lazy"/>
+          <div class="cm-holo"></div>
+          <span class="cm-grade">PSA 9</span>
+        </div>
+        <figcaption class="cm-meta">
+          <div class="cm-cardname">Timetwister, Alpha</div>
+          <div class="cm-row"><span class="cm-user">@cornerqueen</span><span class="cm-likes">&#9825; 348</span></div>
+        </figcaption>
+      </figure>
+      <figure class="cm-card">
+        <div class="cm-slab">
+          <img class="cm-cardimg" src="images/cards/7.jpg" alt="Underground Sea, Alpha in a TopRipz sleeve" loading="lazy"/>
+          <div class="cm-holo"></div>
+          <span class="cm-grade">raw</span>
+        </div>
+        <figcaption class="cm-meta">
+          <div class="cm-cardname">Underground Sea, Alpha</div>
+          <div class="cm-row"><span class="cm-user">@comiccrusader</span><span class="cm-likes">&#9825; 276</span></div>
         </figcaption>
       </figure></div>
       </div>
